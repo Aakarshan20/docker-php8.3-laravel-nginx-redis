@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\WelcomeController;
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::get('about',  [WelcomeController::class, 'about'])->name('about');
+
